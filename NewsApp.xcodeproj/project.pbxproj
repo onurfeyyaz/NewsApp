@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB5040232B4EDD7D00F03594 /* NewsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040222B4EDD7D00F03594 /* NewsAppApp.swift */; };
+		DB5040232B4EDD7D00F03594 /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040222B4EDD7D00F03594 /* NewsApp.swift */; };
 		DB5040252B4EDD7D00F03594 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040242B4EDD7D00F03594 /* ContentView.swift */; };
-		DB5040272B4EDD7D00F03594 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040262B4EDD7D00F03594 /* Item.swift */; };
 		DB5040292B4EDD7E00F03594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5040282B4EDD7E00F03594 /* Assets.xcassets */; };
 		DB50402C2B4EDD7E00F03594 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB50402B2B4EDD7E00F03594 /* Preview Assets.xcassets */; };
 		DB5040362B4EDD7E00F03594 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040352B4EDD7E00F03594 /* NewsAppTests.swift */; };
 		DB5040402B4EDD7E00F03594 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50403F2B4EDD7E00F03594 /* NewsAppUITests.swift */; };
 		DB5040422B4EDD7E00F03594 /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040412B4EDD7E00F03594 /* NewsAppUITestsLaunchTests.swift */; };
+		DB50404F2B4EDF7600F03594 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DB50404E2B4EDF7600F03594 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +36,8 @@
 
 /* Begin PBXFileReference section */
 		DB50401F2B4EDD7D00F03594 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB5040222B4EDD7D00F03594 /* NewsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppApp.swift; sourceTree = "<group>"; };
+		DB5040222B4EDD7D00F03594 /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
 		DB5040242B4EDD7D00F03594 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DB5040262B4EDD7D00F03594 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		DB5040282B4EDD7E00F03594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB50402B2B4EDD7E00F03594 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB5040312B4EDD7E00F03594 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +45,7 @@
 		DB50403B2B4EDD7E00F03594 /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB50403F2B4EDD7E00F03594 /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		DB5040412B4EDD7E00F03594 /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB50404E2B4EDF7600F03594 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 		DB5040162B4EDD7D00F03594 = {
 			isa = PBXGroup;
 			children = (
+				DB50404E2B4EDF7600F03594 /* .gitignore */,
 				DB5040212B4EDD7D00F03594 /* NewsApp */,
 				DB5040342B4EDD7E00F03594 /* NewsAppTests */,
 				DB50403E2B4EDD7E00F03594 /* NewsAppUITests */,
@@ -96,9 +97,8 @@
 		DB5040212B4EDD7D00F03594 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				DB5040222B4EDD7D00F03594 /* NewsAppApp.swift */,
+				DB5040222B4EDD7D00F03594 /* NewsApp.swift */,
 				DB5040242B4EDD7D00F03594 /* ContentView.swift */,
-				DB5040262B4EDD7D00F03594 /* Item.swift */,
 				DB5040282B4EDD7E00F03594 /* Assets.xcassets */,
 				DB50402A2B4EDD7E00F03594 /* Preview Content */,
 			);
@@ -235,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB50402C2B4EDD7E00F03594 /* Preview Assets.xcassets in Resources */,
+				DB50404F2B4EDF7600F03594 /* .gitignore in Resources */,
 				DB5040292B4EDD7E00F03594 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,8 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5040252B4EDD7D00F03594 /* ContentView.swift in Sources */,
-				DB5040272B4EDD7D00F03594 /* Item.swift in Sources */,
-				DB5040232B4EDD7D00F03594 /* NewsAppApp.swift in Sources */,
+				DB5040232B4EDD7D00F03594 /* NewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
