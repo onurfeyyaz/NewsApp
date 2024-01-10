@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DetailView.swift
 //  NewsApp
 //
 //  Created by Feyyaz ONUR on 10.01.2024.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
-
+struct DetailView: View {
     var body: some View {
-        Text("Hello World")
+        Text("Detail View, World! New File")
     }
 }
 
 #Preview {
-    ContentView()
+    DetailView()
 }

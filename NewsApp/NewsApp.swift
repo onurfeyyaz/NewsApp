@@ -12,7 +12,7 @@ import SwiftData
 struct NewsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
