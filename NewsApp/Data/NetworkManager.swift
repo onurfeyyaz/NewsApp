@@ -47,23 +47,4 @@ final class NetworkManager: NetworkManagerProtocol {
                     }
                 }
     }
-    
-    /*
-    func retrieveNews(_ search: String) async throws -> [Article] {
-        // TODO: get news with alamofire
-        
-        try await Task.sleep(nanoseconds: NSEC_PER_SEC * 1)
-        return [
-            Article(
-                source: Source(id: "id", name: "name"),
-                author: "author",
-                title: search,
-                description: "description",
-                url: "url",
-                urlToImage: "urltoimage",
-                publishedAt: Date.now,
-                content: "content"
-            )
-         ]
-        */
 }

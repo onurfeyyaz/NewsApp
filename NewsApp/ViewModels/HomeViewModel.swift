@@ -16,7 +16,9 @@ class NewsViewModel: ObservableObject {
     }
     
     func fetchNews(query: String, page: Int) {
-        repository.retrieveNews(query: query, page: page) { result in
+        /*
+         // ÇALIŞIYOR BURASI
+         repository.retrieveNews(query: query, page: page) { result in
             switch result {
             case .success(let articles):
                 DispatchQueue.main.async {
@@ -26,6 +28,19 @@ class NewsViewModel: ObservableObject {
                 print("Error fetching news: \(error)")
             }
         }
+         */
+        self.articles = [
+            Article(
+                source: Source(id: "id", name: "name"),
+                author: "author",
+                title: "title",
+                description: "description",
+                url: "url",
+                urlToImage: "urltoimage",
+                publishedAt: "17.01.2024",
+                content: "content"
+            )
+        ]
     }
     
     func pagination() {

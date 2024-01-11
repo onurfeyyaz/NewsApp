@@ -15,9 +15,9 @@ struct NewsView: View {
         NavigationSplitView {
             VStack {
                 List {
-                    if let  articles = viewModel.articles {
+                    if let articles = viewModel.articles {
                         ForEach(articles, id:\.title) { article in
-                            NavigationLink(destination: DetailView()) {
+                            NavigationLink(destination: DetailView(article: article)) {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 6) {
                                         Text(article.title ?? "title")
@@ -45,16 +45,8 @@ struct NewsView: View {
                 
             }
             .navigationTitle("Appcent News")
-        } content: {
-            VStack {
-                Text("Content Screen")
-            }
-            .navigationTitle("content")
         } detail: {
-            VStack {
-                Text("Detail Screen")
-            }
-            .navigationTitle("detail")
+            //DetailView(article)
         }
     }
 }
