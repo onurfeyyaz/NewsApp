@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewsModel: Decodable {
+struct NewsModel: Codable {
     let status: String
     let totalResults: Int
     let articles: [Article]

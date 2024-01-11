@@ -7,15 +7,26 @@
 
 import Foundation
 
-final class Repository {
-    private let network: NetworkManager
+protocol NewsRepository {
+    func retrieveNews(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void)
+}
+
+final class Repository: NewsRepository {
+    private let network: NetworkManagerProtocol
     
     // Dependency Injection
-    init(network: NetworkManager) {
+    init(network: NetworkManagerProtocol) {
         self.network = network
     }
     
-    func retrieveNews() async throws -> [Article] {
-        return try await network.retrieveNews()
+    
+    func retrieveNews(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void) {
+        network.retrieveNews(query: query, page: page, completion: completion)
     }
+    
+    /*
+    func retrieveNews(_ search: String) async throws -> [Article] {
+        return try await network.retrieveNews(search)
+    }
+     */
 }
