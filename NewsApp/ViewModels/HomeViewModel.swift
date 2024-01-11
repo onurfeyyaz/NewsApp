@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  NewsViewModel.swift
 //  NewsApp
 //
 //  Created by Feyyaz ONUR on 10.01.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel: ObservableObject {
+class NewsViewModel: ObservableObject {
     private let repository: Repository
     @Published var articles: [Article]?
     
@@ -15,11 +15,20 @@ class HomeViewModel: ObservableObject {
         self.repository = repository
     }
     
-    func fetchNews() async throws {
-        do {
-            self.articles = try await repository.retrieveNews()
-        } catch {
-            print("Error fetching news: \(error)")
+    func fetchNews(query: String, page: Int) {
+        repository.retrieveNews(query: query, page: page) { result in
+            switch result {
+            case .success(let articles):
+                DispatchQueue.main.async {
+                    self.articles = articles
+                }
+            case .failure(let error):
+                print("Error fetching news: \(error)")
+            }
         }
+    }
+    
+    func pagination() {
+        // TODO: pagination yap
     }
 }
