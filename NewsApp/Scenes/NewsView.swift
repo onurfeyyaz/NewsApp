@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct NewsView: View {
-    @ObservedObject private var viewModel = NewsViewModel(repository: Repository(network: NetworkManager()))
+    @ObservedObject private var viewModel = NewsViewModel(
+        repository: Repository(
+            network: NetworkManager()))
+    
     @State private var searchText: String = ""
     
     var body: some View {
@@ -21,16 +25,22 @@ struct NewsView: View {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 6) {
                                         Text(article.title ?? "title")
-                                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                            .font(.system(size:18))
                                             .lineLimit(1)
                                         Text(article.description ?? "description")
-                                            .font(.subheadline)
+                                            .font(.system(size:12))
                                             .lineLimit(3)
                                     }
                                     Spacer(minLength: 20)
-                                    Rectangle()
-                                        .frame(width: 80)
-                                        .redacted(reason: .placeholder)
+                                    if let imageURL = article.urlToImage {
+                                        KFImage(URL(string: imageURL))
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 80)
+                            
+                                    } else {
+                                        ProgressView()
+                                    }
                                 }
                             }
                         }

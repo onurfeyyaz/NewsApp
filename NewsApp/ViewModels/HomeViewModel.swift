@@ -16,7 +16,7 @@ class NewsViewModel: ObservableObject {
     }
     
     func fetchNews(query: String, page: Int) {
-        /*
+        
          // ÇALIŞIYOR BURASI
          repository.retrieveNews(query: query, page: page) { result in
             switch result {
@@ -28,7 +28,7 @@ class NewsViewModel: ObservableObject {
                 print("Error fetching news: \(error)")
             }
         }
-         */
+         /*
         self.articles = [
             Article(
                 source: Source(id: "id", name: "name"),
@@ -36,11 +36,14 @@ class NewsViewModel: ObservableObject {
                 title: "title",
                 description: "description",
                 url: "https://www.apple.com/app-store",
-                urlToImage: "urltoimage",
+                urlToImage: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-iphone-15-pro-202309?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=1692910040844",
                 publishedAt: "17.01.2024",
                 content: "content"
             )
-        ]
+        ]*/
+    }
+    
+    func loadImage(url: URL) {
     }
     
     func pagination() {

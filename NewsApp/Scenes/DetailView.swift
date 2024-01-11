@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DetailView: View {
 
@@ -15,9 +16,16 @@ struct DetailView: View {
     var body: some View {
         NavigationSplitView {
             VStack {
-                Image("placeholder-oryx")
-                    .resizable()
-                    .scaledToFit()
+                if let imageURL = article.urlToImage {
+                    KFImage(URL(string: imageURL))
+                        .resizable()
+                        .scaledToFit()
+        
+                } else {
+                    Rectangle()
+                        .fill(.gray)
+                        .frame(maxWidth: .infinity)
+                }
                 Text(article.title ?? "title")
                 HStack(spacing: 50) {
                     Label(article.author ?? "author", systemImage: "person.crop.circle")
