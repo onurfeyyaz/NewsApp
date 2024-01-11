@@ -37,11 +37,8 @@ struct DetailView: View {
         } detail: {
         }
         .toolbar {
-            Button {
-                
-            } label: {
-                Image(systemName: "square.and.arrow.up")
-            }
+            ShareLink(item: URL(string:article.url!)!)
+            
             Button {
                 
             } label: {

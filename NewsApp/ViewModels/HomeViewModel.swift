@@ -35,7 +35,7 @@ class NewsViewModel: ObservableObject {
                 author: "author",
                 title: "title",
                 description: "description",
-                url: "url",
+                url: "https://www.apple.com/app-store",
                 urlToImage: "urltoimage",
                 publishedAt: "17.01.2024",
                 content: "content"
