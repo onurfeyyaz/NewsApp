@@ -12,7 +12,16 @@ import SwiftData
 struct NewsApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TabView {
+                NewsView()
+                    .tabItem {
+                        Label("News", systemImage: "house.fill")
+                    }
+                FavoriteView()
+                    .tabItem {
+                        Label("Favorite", systemImage: "heart.fill")
+                    }
+            }
         }
     }
 }
