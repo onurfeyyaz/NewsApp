@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailView: View {
+
+    @State private var isPresentWebView = false
     var article: Article
     
     var body: some View {
@@ -27,12 +29,20 @@ struct DetailView: View {
                 }
                 Spacer()
                 Button {
-                    // TODO: go to webview
+                    isPresentWebView = true
                 } label: {
                     Text("News Source")
                 }
                 .padding(12)
                 .buttonStyle(.borderedProminent)
+                .sheet(isPresented: $isPresentWebView) {
+                    NavigationStack {
+                        WebView(url: URL(string: article.url!)!)
+                            .ignoresSafeArea()
+                            .navigationTitle(article.title!)
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
+                }
             }
         } detail: {
         }
