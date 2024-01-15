@@ -20,16 +20,17 @@ struct DetailView: View {
                     KFImage(URL(string: imageURL))
                         .resizable()
                         .scaledToFit()
+                        .frame(maxWidth: .infinity)
         
                 } else {
                     Rectangle()
                         .fill(.gray)
                         .frame(maxWidth: .infinity)
                 }
-                Text(article.title ?? "title")
+                Text(article.title)
                 HStack(spacing: 50) {
                     Label(article.author ?? "author", systemImage: "person.crop.circle")
-                    Label(article.publishedAt ?? "12", systemImage: "calendar")
+                    Label(article.formattedPublishedDate ?? "12.12.12", systemImage: "calendar")
                 }
                 .padding()
                 ScrollView {
@@ -47,7 +48,7 @@ struct DetailView: View {
                     NavigationStack {
                         WebView(url: URL(string: article.url!)!)
                             .ignoresSafeArea()
-                            .navigationTitle(article.title!)
+                            .navigationTitle(article.title)
                             .navigationBarTitleDisplayMode(.inline)
                     }
                 }

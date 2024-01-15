@@ -24,11 +24,11 @@ struct NewsView: View {
                             NavigationLink(destination: DetailView(article: article)) {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 6) {
-                                        Text(article.title ?? "title")
-                                            .font(.system(size:18))
+                                        Text(article.title)
+                                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                             .lineLimit(1)
                                         Text(article.description ?? "description")
-                                            .font(.system(size:12))
+                                            .font(.subheadline)
                                             .lineLimit(3)
                                     }
                                     Spacer(minLength: 20)
@@ -36,11 +36,17 @@ struct NewsView: View {
                                         KFImage(URL(string: imageURL))
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 80)
-                            
+                                            .frame(width: 100)
                                     } else {
-                                        ProgressView()
+                                        Rectangle()
+                                            .fill(.gray)
+                                            .frame(width: 100)
                                     }
+                                }
+                            }
+                            .onAppear() {
+                                if viewModel.isLastItem(item: articles.last) {
+                                    viewModel.fetchNews()
                                 }
                             }
                         }
@@ -49,7 +55,7 @@ struct NewsView: View {
                 .searchable(text: $searchText, prompt: "Haber Ara")
                 .onChange(of: searchText) { _, newValue in
                     Task {
-                        viewModel.fetchNews(query: newValue, page: 1)
+                        viewModel.searchNews(query: newValue)
                     }
                 }
                 
