@@ -8,21 +8,32 @@
 import Foundation
 
 class NewsViewModel: ObservableObject {
-    private let repository: Repository
     @Published var articles: [Article]?
+    
+    private var currentPage = 1
+    private let repository: Repository
+    private var currentQuery = ""
+    private var articleList: [Article] = []
     
     init(repository: Repository) {
         self.repository = repository
     }
     
-    func fetchNews(query: String, page: Int) {
-        
-         // ÇALIŞIYOR BURASI
-         repository.retrieveNews(query: query, page: page) { result in
+    func searchNews(query: String) {
+        currentQuery = query
+        fetchNews()
+    }
+    
+    func fetchNews() {
+        repository.retrieveNews(query: currentQuery, page: currentPage) { result in
             switch result {
-            case .success(let articles):
+            case .success(let newArticles):
                 DispatchQueue.main.async {
-                    self.articles = articles
+                    self.articleList.append(contentsOf: newArticles)
+                    self.articles = self.articleList
+                    //self.currentPage += 1
+                    print("CURRENNT PAGEEEE: \(self.currentPage)")
+                    print("ARTİLCES NUMBER ---------> \(self.articleList.count)")
                 }
             case .failure(let error):
                 print("Error fetching news: \(error)")
@@ -43,10 +54,8 @@ class NewsViewModel: ObservableObject {
         ]*/
     }
     
-    func loadImage(url: URL) {
-    }
-    
-    func pagination() {
-        // TODO: pagination yap
+    func isLastItem<T: Identifiable>(item: T?) -> Bool {
+        guard let item = item else { return false }
+        return self.articles?.last?.title as! T.ID == item.id
     }
 }

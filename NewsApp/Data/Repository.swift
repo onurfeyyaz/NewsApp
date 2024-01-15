@@ -7,11 +7,7 @@
 
 import Foundation
 
-protocol NewsRepository {
-    func retrieveNews(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void)
-}
-
-final class Repository: NewsRepository {
+final class Repository: NetworkManagerProtocol {
     private let network: NetworkManagerProtocol
     
     // Dependency Injection

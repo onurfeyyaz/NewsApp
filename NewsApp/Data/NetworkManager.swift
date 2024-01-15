@@ -8,11 +8,6 @@
 import Foundation
 import Alamofire
 
-enum NetworkError: Error {
-    case invalidURL
-    case invalidData
-}
-
 protocol NetworkManagerProtocol {
     func retrieveNews(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void)
 }
@@ -27,24 +22,24 @@ final class NetworkManager: NetworkManagerProtocol {
         }
         print("AF url: \(url)")
         AF.request(url).responseDecodable(of: NewsModel.self) { response in
-                    switch response.result {
-                    case .success:
-                        do {
-                            guard let data = response.data else {
-                                completion(.failure(NetworkError.invalidData))
-                                return
-                            }
-                            
-                            let articles = try JSONDecoder().decode(NewsModel.self, from: data).articles
-                            print("articless \(articles)")
-                            completion(.success(articles))
-                        } catch {
-                            completion(.failure(error))
-                        }
-                        
-                    case .failure(let error):
-                        completion(.failure(error))
+            switch response.result {
+            case .success:
+                do {
+                    guard let data = response.data else {
+                        completion(.failure(NetworkError.invalidData))
+                        return
                     }
+                    
+                    let articles = try JSONDecoder().decode(NewsModel.self, from: data).articles
+                    print("articless \(articles)")
+                    completion(.success(articles))
+                } catch {
+                    completion(.failure(error))
                 }
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
