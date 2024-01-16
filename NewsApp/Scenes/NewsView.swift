@@ -25,7 +25,7 @@ struct NewsView: View {
                 List {
                     if let articles = viewModel.articles {
                         ForEach(articles, id:\.title) { article in
-                            NavigationLink(destination: DetailView(article: article, modelContext: modelContext)) {
+                            NavigationLink(destination: DetailView(article: article)) {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 6) {
                                         Text(article.title)
@@ -64,15 +64,10 @@ struct NewsView: View {
                 }
                 
             }
-            Button("Add Sample", action: addArt)
             .navigationTitle("Appcent News")
         } detail: {
             //DetailView(article)
         }
-    }
-    func addArt() {
-        let tesla = Article(source: Source(id: "", name: ""), author: "", title: "swiftdata title", description: "desc", url: "www.apple.com", urlToImage: "", publishedAt: "", content: "")
-        modelContext.insert(tesla)
     }
 }
 
