@@ -10,12 +10,9 @@ import SwiftData
 
 @Model
 class Article: Codable {
-    var id: String {
-        return title
-    }
     let source: Source
     let author: String?
-    let title: String
+    let title: String?
     let newsDescription: String?
     let url: String?
     let urlToImage: String?
@@ -44,7 +41,7 @@ class Article: Codable {
         case url, urlToImage, publishedAt, content
     }
     
-    init(source: Source, author: String?, title: String, description: String?, url: String?, urlToImage: String?, publishedAt: String?, content: String?) {
+    init(source: Source, author: String?, title: String, description: String?, url: String, urlToImage: String?, publishedAt: String?, content: String?) {
         self.source = source
         self.author = author
         self.title = title
@@ -61,7 +58,7 @@ class Article: Codable {
         author = try container.decodeIfPresent(String.self, forKey: .author)
         title = try container.decode(String.self, forKey: .title)
         newsDescription = try container.decodeIfPresent(String.self, forKey: .newsDescription)
-        url = try container.decodeIfPresent(String.self, forKey: .url)
+        url = try container.decode(String.self, forKey: .url)
         urlToImage = try container.decodeIfPresent(String.self, forKey: .urlToImage)
         publishedAt = try container.decodeIfPresent(String.self, forKey: .publishedAt)
         content = try container.decodeIfPresent(String.self, forKey: .content)

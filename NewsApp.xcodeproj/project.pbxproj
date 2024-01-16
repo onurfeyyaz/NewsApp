@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DB0EEC162B561E0400829A14 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0EEC152B561E0400829A14 /* DataSource.swift */; };
 		DB0EEC182B561F2F00829A14 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0EEC172B561F2F00829A14 /* DetailViewModel.swift */; };
+		DB20BF9C2B56F34F00FA085E /* SwiftDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20BF9B2B56F34F00FA085E /* SwiftDataRepository.swift */; };
+		DB20BF9E2B56F47A00FA085E /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20BF9D2B56F47A00FA085E /* DataSourceProtocol.swift */; };
+		DB20BFA02B56F49700FA085E /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20BF9F2B56F49700FA085E /* NetworkManagerProtocol.swift */; };
 		DB5040232B4EDD7D00F03594 /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040222B4EDD7D00F03594 /* NewsApp.swift */; };
 		DB5040252B4EDD7D00F03594 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040242B4EDD7D00F03594 /* NewsView.swift */; };
 		DB5040292B4EDD7E00F03594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5040282B4EDD7E00F03594 /* Assets.xcassets */; };
@@ -21,7 +24,7 @@
 		DB5040542B4EE3B000F03594 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040532B4EE3B000F03594 /* Article.swift */; };
 		DB50405A2B4F087C00F03594 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DB5040592B4F087C00F03594 /* Alamofire */; };
 		DB50405D2B4F08BE00F03594 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DB50405C2B4F08BE00F03594 /* Kingfisher */; };
-		DB5040612B4F0A1600F03594 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040602B4F0A1600F03594 /* Repository.swift */; };
+		DB5040612B4F0A1600F03594 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040602B4F0A1600F03594 /* APIRepository.swift */; };
 		DB5040632B4F0BED00F03594 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040622B4F0BEC00F03594 /* NetworkManager.swift */; };
 		DB5040672B4F0F2900F03594 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040662B4F0F2900F03594 /* HomeViewModel.swift */; };
 		DB50406A2B4F16DD00F03594 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5040692B4F16DD00F03594 /* DetailView.swift */; };
@@ -52,6 +55,9 @@
 /* Begin PBXFileReference section */
 		DB0EEC152B561E0400829A14 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DB0EEC172B561F2F00829A14 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DB20BF9B2B56F34F00FA085E /* SwiftDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataRepository.swift; sourceTree = "<group>"; };
+		DB20BF9D2B56F47A00FA085E /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		DB20BF9F2B56F49700FA085E /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		DB50401F2B4EDD7D00F03594 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5040222B4EDD7D00F03594 /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
 		DB5040242B4EDD7D00F03594 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
@@ -67,7 +73,7 @@
 		DB5040532B4EE3B000F03594 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DB5040552B4EE85100F03594 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		DB5040562B4EE98F00F03594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		DB5040602B4F0A1600F03594 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		DB5040602B4F0A1600F03594 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		DB5040622B4F0BEC00F03594 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DB5040662B4F0F2900F03594 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DB5040692B4F16DD00F03594 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				DB0EEC152B561E0400829A14 /* DataSource.swift */,
+				DB20BF9D2B56F47A00FA085E /* DataSourceProtocol.swift */,
+				DB20BF9F2B56F49700FA085E /* NetworkManagerProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,7 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				DB5040502B4EE32B00F03594 /* Models */,
-				DB5040602B4F0A1600F03594 /* Repository.swift */,
+				DB5040602B4F0A1600F03594 /* APIRepository.swift */,
+				DB20BF9B2B56F34F00FA085E /* SwiftDataRepository.swift */,
 				DB5040622B4F0BEC00F03594 /* NetworkManager.swift */,
 				DB5040702B4F61B300F03594 /* NewsAPIEndpoint.swift */,
 			);
@@ -328,7 +337,6 @@
 			packageReferences = (
 				DB5040582B4F087C00F03594 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DB50405B2B4F08BE00F03594 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				DB50406B2B4F1CF900F03594 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = DB5040202B4EDD7D00F03594 /* Products */;
 			projectDirPath = "";
@@ -374,16 +382,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB0EEC162B561E0400829A14 /* DataSource.swift in Sources */,
+				DB20BF9E2B56F47A00FA085E /* DataSourceProtocol.swift in Sources */,
 				DB5040542B4EE3B000F03594 /* Article.swift in Sources */,
 				DB50406A2B4F16DD00F03594 /* DetailView.swift in Sources */,
 				DB5040712B4F61B300F03594 /* NewsAPIEndpoint.swift in Sources */,
 				DB5040522B4EE34900F03594 /* NewsModel.swift in Sources */,
 				DB5040672B4F0F2900F03594 /* HomeViewModel.swift in Sources */,
 				DB5040632B4F0BED00F03594 /* NetworkManager.swift in Sources */,
-				DB5040612B4F0A1600F03594 /* Repository.swift in Sources */,
+				DB5040612B4F0A1600F03594 /* APIRepository.swift in Sources */,
 				DB5040252B4EDD7D00F03594 /* NewsView.swift in Sources */,
+				DB20BFA02B56F49700FA085E /* NetworkManagerProtocol.swift in Sources */,
 				DB50406F2B4F563400F03594 /* FavoriteView.swift in Sources */,
 				DB70EF652B5070BC00471D4D /* WebView.swift in Sources */,
+				DB20BF9C2B56F34F00FA085E /* SwiftDataRepository.swift in Sources */,
 				DB70EF6A2B52C96100471D4D /* NetworkError.swift in Sources */,
 				DB5040232B4EDD7D00F03594 /* NewsApp.swift in Sources */,
 				DB0EEC182B561F2F00829A14 /* DetailViewModel.swift in Sources */,
@@ -737,14 +748,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.10.1;
-			};
-		};
-		DB50406B2B4F1CF900F03594 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.54.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

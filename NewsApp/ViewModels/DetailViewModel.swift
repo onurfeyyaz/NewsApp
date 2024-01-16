@@ -10,12 +10,12 @@ import Foundation
 @Observable
 class DetailViewModel {
     @ObservationIgnored
-    private let repository: Repository
+    private let repository: SwiftDataRepository
     //private let dataSource: DataSource
 
     //var articles: [Article] = []
 
-    init(repository: Repository) { //dataSource: DataSource = DataSource.shared,
+    init(repository: SwiftDataRepository) { //dataSource: DataSource = DataSource.shared,
         self.repository = repository
         //self.dataSource = dataSource
         //articles = dataSource.fetchFavorites()
@@ -25,7 +25,12 @@ class DetailViewModel {
         repository.addFavorite(article)
     }
 
-    func removeFavorite(article: Article) {
-        repository.removeFavorite(article: article)
+    func removeFavorite(_ article: Article) {
+        repository.removeFavorite(article)
+    }
+    
+    func isFavorite(_ article: Article) -> Bool {
+        
+        return false
     }
 }

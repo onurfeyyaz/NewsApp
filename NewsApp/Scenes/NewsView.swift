@@ -11,7 +11,7 @@ import Kingfisher
 
 struct NewsView: View {
     @ObservedObject private var viewModel = NewsViewModel(
-        repository: Repository(
+        repository: APIRepository(
             network: NetworkManager()))
     
     @State private var searchText: String = ""
@@ -28,7 +28,7 @@ struct NewsView: View {
                             NavigationLink(destination: DetailView(article: article)) {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 6) {
-                                        Text(article.title)
+                                        Text(article.title ?? "title")
                                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                             .lineLimit(1)
                                         Text(article.newsDescription ?? "description")
@@ -49,9 +49,11 @@ struct NewsView: View {
                                 }
                             }
                             .onAppear() {
+                                /*
                                 if viewModel.isLastItem(item: articles.last) {
                                     viewModel.fetchNews()
                                 }
+                                */
                             }
                         }
                     }

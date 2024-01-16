@@ -7,20 +7,15 @@
 
 import SwiftUI
 import Kingfisher
-import SwiftData
 
 struct DetailView: View {
-    @State private var viewModel = DetailViewModel(
-        repository: Repository(
-            network: NetworkManager())
-    )
+    @State private var viewModel = DetailViewModel(repository: SwiftDataRepository())
     @State private var isPresentWebView = false
     
     var article: Article
     
     var body: some View {
         NavigationSplitView {
-            //Button("Add Sample", action: viewModel.addFavorite)
             VStack {
                 if let imageURL = article.urlToImage {
                     KFImage(URL(string: imageURL))
@@ -33,7 +28,7 @@ struct DetailView: View {
                         .fill(.gray)
                         .frame(maxWidth: .infinity)
                 }
-                Text(article.title)
+                Text(article.title ?? "title")
                 HStack(spacing: 50) {
                     Label(article.author ?? "author", systemImage: "person.crop.circle")
                     Label(article.formattedPublishedDate ?? "12.12.12", systemImage: "calendar")
@@ -54,7 +49,7 @@ struct DetailView: View {
                     NavigationStack {
                         WebView(url: URL(string: article.url!)!)
                             .ignoresSafeArea()
-                            .navigationTitle(article.title)
+                            .navigationTitle(article.title ?? "title")
                             .navigationBarTitleDisplayMode(.inline)
                     }
                 }
@@ -64,9 +59,13 @@ struct DetailView: View {
         .toolbar {
             ShareLink(item: URL(string:article.url!)!)
             Button {
+                if(viewModel.isFavorite(article)) {
+                    viewModel.removeFavorite(article)
+                }
                 viewModel.addFavorite(article)
+                
             } label: {
-                Image(systemName: "heart")
+                Image(systemName: viewModel.isFavorite(article) ? "heart.fill" : "heart")
             }
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-final class DataSource {
+final class DataSource: DataSourceProtocol {
     
     private let modelContainer: ModelContainer
     private let modelContext: ModelContext

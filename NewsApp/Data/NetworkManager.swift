@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol NetworkManagerProtocol {
-    func retrieveNews(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void)
-}
-
 final class NetworkManager: NetworkManagerProtocol {
     let apiKey = Bundle.main.infoDictionary?["API_KEY"] as! String
  
