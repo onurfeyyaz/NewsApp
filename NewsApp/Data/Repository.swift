@@ -23,9 +23,9 @@ final class Repository: NetworkManagerProtocol {
     }
     
     // MARK: Local Database - SwiftData
-    func addFavorite() {
+    func addFavorite(_ article: Article) {
         let tesla = Article(source: Source(id: "", name: ""), author: "", title: "swiftdata title", description: "desc", url: "www.apple.com", urlToImage: "", publishedAt: "", content: "")
-        dataSource.addFavorite(tesla)
+        dataSource.addFavorite(article)
     }
 
     func removeFavorite(article: Article) {

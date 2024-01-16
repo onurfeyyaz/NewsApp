@@ -11,25 +11,21 @@ import Foundation
 class DetailViewModel {
     @ObservationIgnored
     private let repository: Repository
-    private let dataSource: DataSource
+    //private let dataSource: DataSource
 
-    var articles: [Article] = []
+    //var articles: [Article] = []
 
-    init(dataSource: DataSource = DataSource.shared, repository: Repository) {
+    init(repository: Repository) { //dataSource: DataSource = DataSource.shared,
         self.repository = repository
-        self.dataSource = dataSource
-        articles = dataSource.fetchFavorites()
+        //self.dataSource = dataSource
+        //articles = dataSource.fetchFavorites()
     }
     
-    func addFavorite() {
-        repository.addFavorite()
+    func addFavorite(_ article: Article) {
+        repository.addFavorite(article)
     }
 
     func removeFavorite(article: Article) {
         repository.removeFavorite(article: article)
-    }
-    
-    func fetchFavorites() {
-        articles = repository.fetchFavorites()
     }
 }
