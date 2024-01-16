@@ -25,6 +25,7 @@ class NewsViewModel: ObservableObject {
     }
     
     func fetchNews() {
+        /*
         repository.retrieveNews(query: currentQuery, page: currentPage) { result in
             switch result {
             case .success(let newArticles):
@@ -39,7 +40,8 @@ class NewsViewModel: ObservableObject {
                 print("Error fetching news: \(error)")
             }
         }
-         /*
+         */
+         
         self.articles = [
             Article(
                 source: Source(id: "id", name: "name"),
@@ -51,7 +53,7 @@ class NewsViewModel: ObservableObject {
                 publishedAt: "17.01.2024",
                 content: "content"
             )
-        ]*/
+        ]
     }
     
     func isLastItem<T: Identifiable>(item: T?) -> Bool {
